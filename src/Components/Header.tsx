@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { QuantityItem } from "../recoil/cartItemListAtom";
+import { QuantityItem, TotalPrice } from "../recoil/cartItemListAtom";
 import { useRecoilValue } from "recoil";
 
 const navMenus = [
@@ -10,6 +10,7 @@ const navMenus = [
 
 export default function Header() {
   const totalQuantity = useRecoilValue(QuantityItem);
+  const totalPrice = useRecoilValue(TotalPrice);
   return (
     <>
       <div className="flex items-center justify-between bg-yellow-200">
@@ -179,7 +180,7 @@ export default function Header() {
             >
               <div className="card-body">
                 <span className="font-bold text-lg">{`${totalQuantity} Items`}</span>
-                <span className="text-info">Subtotal: $999</span>
+                <span className="text-info">Subtotal: ${totalPrice}</span>
                 <div className="card-actions">
                   <Link to="/cart">
                     <button className="btn btn-primary btn-block">

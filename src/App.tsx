@@ -18,6 +18,7 @@ function App() {
           <Route path="/popupList/:id" element={<PopupDetail />} />
           <Route path="/cart" element={<Cart />} />
           {/* <Route path="/popupList/2" element={</>}/> */}
+          {/* <test></test> */}
         </Routes>
       </BrowserRouter>
     </RecoilRoot>

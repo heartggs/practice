@@ -53,7 +53,7 @@ export default function PopupDetail() {
   return (
     <>
       <div className="flex flex-col mb-10 justify-center text-center lg:flex-row md:flex-row md:text-left sm:flex-col sm: items-center sm:text-center">
-        <figure className="bg-gray-500 mb-2 w-96 h-60 rounded-2xl sm:mb-2">
+        <figure className="bg-gray-500 mb-2 w-96 h-60 sm:mb-2">
           <img src="" alt="" />
           <span className="text-neutral-50 flex justify-center">
             이미지없음

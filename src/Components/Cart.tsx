@@ -1,8 +1,16 @@
 import { useRecoilValue } from "recoil";
-import { cartListAtom } from "../recoil/cartItemListAtom";
+import { cartListAtom, TotalPrice } from "../recoil/cartItemListAtom";
 
 export default function Cart() {
   const cartList = useRecoilValue(cartListAtom);
+  const totalPrice = useRecoilValue(TotalPrice);
+
+  const addProduct = (id: number) => {
+    const product = cartList.find((item) => item.id === id);
+    if (product) {
+      console.log(product);
+    }
+  };
 
   return (
     <div>
@@ -19,7 +27,12 @@ export default function Cart() {
           <p>{item.title}</p>
 
           <div className="join join-horizontal">
-            <button className="btn join-item hover:bg-slate-600 hover:text-white">
+            <button
+              onClick={() => {
+                addProduct(item.id);
+              }}
+              className="btn join-item hover:bg-slate-600 hover:text-white"
+            >
               +
             </button>
             <button className="btn join-item">1</button>
@@ -30,6 +43,7 @@ export default function Cart() {
           <span>{item.price}</span>
         </div>
       ))}
+      <p>{totalPrice}</p>
     </div>
   );
 }
